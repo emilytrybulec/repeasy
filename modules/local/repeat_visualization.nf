@@ -22,11 +22,11 @@ process REPEAT_VIEW {
     def args = task.ext.args ?: ''
     def prefix = task.ext.prefix ?: "${meta.id}"
     """
-    /usr/local/bin/calcDivergenceFromAlign.pl \\
+    /usr/local/share/RepeatMasker/util/calcDivergenceFromAlign.pl \\
         -s ${prefix} \\
         $align
 
-    /usr/local/bin/createRepeatLandscape.pl \\
+    /usr/local/share/RepeatMasker/util/createRepeatLandscape.pl \\
         -div ${prefix} \\
         -twoBit $twoBit > ${prefix}.html
 
